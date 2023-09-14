@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
+      path('upload/', views.upload_image, name='upload_image'),
+    path('display/', views.display_image, name='image_display'),
     path('classify/', views.classify, name='classify'),
     path('admin/', admin.site.urls),
     path('', views.home),
@@ -26,3 +30,5 @@ urlpatterns = [
     # path('predict/result', views.result),
     path('index/result', views.result),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4,10 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <title>Result</title>
-    <h2 style="color:black;display:inline"> Result: </h2>
-    <h2 style="color:green;display:inline">{{ result }}</h2>
+    <style type="text/css">
+    div{
+     color:'white';
+    }
+    /* .main{ */
+/* <!--     position:fixed;-->
+<!--     top:20px;-->
+<!--     left:500px;-->
+<!--     width:550px;-->
+<!--     background-color:white;-->
+<!--     border-radius:2px;-->
+<!--     align-item:center;-->
+<!--     padding:3%;--> */
+    /* } */
+    h1{
+     color:'white';
+     font-family:arial, sans-serif;
+     font-size:40px;
+     font-weight:bold;
+     margin-top:100px;
+    }
+    h2{
+     color:'white';
+     font-family:arial, sans-serif;
+     font-size:30px;
+     font-weight:bold;
+     margin-top:200px;
+     text-align: center;
+    }
+    body{
+        background-image:url("{% static 'diabeticsPrediction/images/DPimages3.jpg' %}");
+        background-size: 100%;
+    }
+
+    input[type=submit]{
+     background-color:#4B0150;
+     border:2px;
+     color:white;
+     padding:8px 16px;
+     cursor:pointer;
+     margin-top:15px;
+/* <!--      position:fixed;-->
+<!--     top:20px;-->
+<!--     left:500px;--> */
+.center {
+    text-align: center;
+  }
+    }
+    </style>
 </head>
 <body>
+    <div class="center" style="
+    text-align: center;
+    margin-top: 180px;">
+        <!-- display_image.html -->
+            <!-- {% for image in images %}
+            <img src="{{ image.image.url }}" alt="Uploaded Image">
+            {% endfor %} -->
 
+         <h2 style="color:black;display:inline "> Result: </h2>
+         {% if result == "Normal" %}
+         <h2 style="color:green;display:inline">{{ result }}</h2>
+         {% else %}
+         <h2 style="color:red;display:inline">{{ result }}</h2>
+         {% endif %}
+
+    </div>
+   
 </body>
 </html>
